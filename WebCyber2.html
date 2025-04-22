@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyber Awareness</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.background {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fdfdfd;
+}
+
+hr {
+  border: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.info-section {
+  margin-bottom: 25px;
+}
+
+.info-section h2 {
+  font-size: 1.5rem;
+  color: #fdd835;
+}
+
+.info-section p, .info-section ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #eeeeee;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  content: ">> ";
+  margin-right: 6px;
+  color: #4caf50;
+}
+
+.Count {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.custom-button {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s ease;
+  min-width: 160px;
+}
+
+.google {
+  background-color: #4285F4;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.instagram {
+  background-color: #E1306C;
+}
+
+.custom-button:hover {
+  opacity: 0.85;
+}
+
+#currentTime {
+  text-align: center;
+  margin-top: 25px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+  </style>
+
+
+</head>
+<body>
+
+  <div class="background">
+    <div class="container">
+      <h1 class="title">Cyber Awareness: Spotting Fake Login Pages</h1>
+      <hr />
+
+      <section class="info-section">
+        <h2># Beware of Phishing</h2>
+        <p>
+          Phishing is a cybercrime where attackers mimic trusted websites like Google, Facebook, or Instagram to steal your login details. These fake pages are often hard to distinguish from the real ones.
+        </p>
+        <p>
+          Always check the website URL carefully. Ensure it's secure (starts with <strong>https://</strong>) and doesn't contain unusual characters or misspellings.
+        </p>
+      </section>
+
+      <section class="info-section">
+        <h2> # Stay Safe Online</h2>
+        <ul>
+          <li>Never click on suspicious or unexpected links in emails.</li>
+          <li>Use strong, unique passwords for every account.</li>
+          <li>Enable 2-Factor Authentication (2FA) wherever possible.</li>
+          <li>Report any page that looks suspicious or asks for credentials unnecessarily.</li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <h2 class="title">Login Page Simulation</h2>
+      <p class="Count">Visits: 
+        <span id="Countgoog">0</span> (Google), 
+        <span id="Countface">0</span> (Facebook), 
+        <span id="Countinst">0</span> (Instagram)
+      </p>
+
+      <div class="button-container">
+        <button class="custom-button google" onclick="window.open('Google1.html', '_blank')">Go to Google</button>
+        <button class="custom-button facebook" onclick="window.open('Facebook.html', '_blank')">Go to Facebook</button>
+        <button class="custom-button instagram" onclick="window.open('Instagram.html', '_blank')">Go to Instagram</button>
+      </div>
+
+      <p id="currentTime"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

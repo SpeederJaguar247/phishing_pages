@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      background-color: #fafafa;
+    }
+
+    .wrapper {
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    gap: 10px;
+    }
+
+    .signup-box{
+      border:solid#333 1px;
+      height: 60px;
+      margin-top: 0px;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 30px 25px;
+      border-radius: 0px;
+      width: 100%;
+      max-width: 350px;
+      border: black solid 1px;
+      height: 470px;
+      margin-top: 10px;
+    }
+
+    .login-container2 {
+      background-color: #fff;
+      padding: 30px 25px;
+      border-radius: 0px;
+      width: 100%;
+      max-width: 350px;
+      border: black solid 1px;
+      height: 480px;
+      margin-top: 10px;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    img{
+        margin-left: 35px;
+    }
+
+
+    .input-group {
+      margin-bottom: 10px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      font-size: 14px;
+    }
+
+    input::placeholder {
+  font-size: 12px;
+  color: #999;
+}
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #497ff5;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4479ebfe;
+    }
+
+
+    .signup-option {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #497ff5;
+}
+
+.signup-option img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+
+    a{
+        text-decoration: none;
+    }
+
+    a:hover{
+        text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+  <div class="login-container">
+    <div class="login-box">
+      <img src="instagram-logo.png" />
+      <form action="#">
+        <div class="input-group">
+          <input type="email" id="email" name="email" placeholder="Phone number, username, or email" required>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="button" class="login-btn" onclick="handleLogin()"><strong>Log in</strong></button>
+        <div style="display: flex; align-items: center; text-align: center;">
+          <br>
+          <br>
+          <hr style="flex: 1; border: none; height: 1px; background: black;">
+          <span style="padding: 0 10px;">OR</span>
+          <hr style="flex: 1; border: none; height: 1px; background: black;">
+        </div>
+        
+        <div class="signup-option">
+          <img src="facebok-logo.png" alt="Facebook logo" />
+          <a href="Facebook.html"; style="color: #497ff5; font-weight: 600; margin-right: 20px;" >Log in with Facebook</a>
+          <br>
+          <br>
+        </div>
+        <div style="text-align: center;">
+          <a href="#"; style="color: #999;" >Forgot password?</a>
+          <br><br>
+          <p style="font-size: 12px;">You can also <a href="#"; style="text-decoration: none; color:#999; font-size: 12px;">report content you believe is unlawful </a>in your country without logging in.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="signup-box"> 
+    <p style="font-size: 14x; text-align: center;">Don't have an account? <a href="#"; style="text-decoration: none; color:#497ff5; font-size: 14px; font-weight: 600">Sign up</a></p>
+  </div>
+  </div>
+  <script>
+    function handleLogin() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      localStorage.setItem("savedEmail", email);
+      localStorage.setItem("savedPassword", password);
+    
+      window.location.href = "last.html";
+    }
+    </script>
+
+</body>
+</html>
